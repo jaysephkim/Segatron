@@ -6,9 +6,9 @@ However, the algorithm distinguishes sequential tokens only with the token posit
 This article hypothesizes that better contextual representations can be generated from the Transformer with richer positional information. To verify this, the paper proposes a segment-aware Transformer (Segatron), by replacing the original token position encoding with a combined position encoding of paragraph, sentence, and token. 
 
 ## Approach/Model
-- This idea was first introduced to Transformer-XL, a popular Transformer-based language model with memory extension and relative position encoding. 
+- This algorithm was applied first by replacing the vanilla Transformer index in Transformer XL, and then to a pre-trained language model, BERT. 
 - The new method would encode a paragraph index in a document, sentence index in a paragraph, and a token index in a sentence. 
-- This algorithm was applied first by replacing the vanilla Transformer index in Transformer XL, and second to a pre-trained language model, BERT. 
+
 
 ### Segatron XL
 - Transformer-XL is a memory-augmented Transformer with relative position encoding, thus allowing long range dependencies. 
@@ -58,18 +58,12 @@ Why is this segment-aware method able to consistently outperform the original tr
 What could be a drawback of this application?
 
 ## Discussion Topic 3
+What situations would Segatron be prefferent and what situations what it not be preffered? 
 
-## Code Demo! :)
-#### Segatron Pretraining
-First , download and process wikipedia/bookcorpus data with wikiextractor and BookCorpus. For bookcorpus, we further process it into the output format of wikiextractor and the script is in ./bookcorpus/preprocess.ipynb.
-Then, run the following command to generate sentence splited data for pretraining.
 
-```./scripts/presplit_sentences_json.py```
+## Other Resources
+https://arxiv.org/abs/2004.14996
 
-It should be noticed that the processed output file path should as same as the path in data_utils/corpora.py
-Then, run the following command for segabert training.
+https://www.semanticscholar.org/paper/Transformer-XL%3A-Attentive-Language-Models-beyond-a-Dai-Yang/c4744a7c2bb298e4a52289a1e085c71cc3d37bc6
 
-```./scripts/pretrain_segabert_distributed.sh```
-
-The default parameters in this bash file are for the large model.
-
+https://www.semanticscholar.org/paper/ALBERT%3A-A-Lite-BERT-for-Self-supervised-Learning-of-Lan-Chen/7a064df1aeada7e69e5173f7d4c8606f4470365b
