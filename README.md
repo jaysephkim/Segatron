@@ -43,6 +43,9 @@ Will this new method be able to outperform the original transformer?
 #### Main Results
 - Here we see that the PPL of Transformer-XL decreases from 24.35 to 24.07/22.51 after adding paragraph/sentence position encoding, and further decreases to 22.47 by encoding paragraph and sentence positions simultaneously. The results show that both the paragraph position and sentence position can help the Transformer to model language. Sentence position encoding contributes more than paragraph position encoding in our experiments.
 
+- Perplexity -> a metric for evaluating language models
+- Low perplexity -> probability distribution is good at predicting the sample
+
 <img width="367" alt="Screen Shot 2022-03-26 at 4 59 17 PM" src="https://user-images.githubusercontent.com/69778066/160258399-13378e67-6c62-40b3-93e1-0cb3e5b12bc2.png">
 
 <img width="492" alt="Screen Shot 2022-03-26 at 5 01 44 PM" src="https://user-images.githubusercontent.com/69778066/160258462-fbc57ec1-4252-463e-b378-f22f2b078724.png">
