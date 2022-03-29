@@ -1,7 +1,7 @@
 # Segatron: Segment-Aware Transformer for Language Modeling and Understanding
 
 ## Overview
-Transformers are powerful for sequence modeling! Nearly all state-of-the-art language models and pre-trained language models are based on the Transformer architecture. 
+Transformers are powerful for sequence modeling! Most state-of-the-art language models and pre-trained language models are based on the Transformer architecture. 
 However, the algorithm distinguishes sequential tokens only with the token position index. 
 This article hypothesizes that better contextual representations can be generated from the Transformer given better positional information. To verify this, the paper proposes a segment-aware Transformer (Segatron), by replacing the original token position encoding with a combined position encoding of paragraph, sentence, and token. 
 
