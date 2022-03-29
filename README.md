@@ -5,7 +5,7 @@ Transformers are powerful for sequence modeling! Most state-of-the-art language 
 However, the algorithm distinguishes sequential tokens only with the token position index. 
 This article hypothesizes that better contextual representations can be generated from the Transformer given better positional information. To verify this, the paper proposes a segment-aware Transformer (Segatron), by replacing the original token position encoding with a combined position encoding of paragraph, sentence, and token. 
 
-## Approach/Model
+## Model
 - This algorithm was applied first by replacing the vanilla Transformer index in Transformer XL, and then to a pre-trained language model, BERT. 
 - The new method would encode a paragraph index in a document, sentence index in a paragraph, and a token index in a sentence. 
 
