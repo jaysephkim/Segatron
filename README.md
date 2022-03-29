@@ -29,7 +29,7 @@ This article hypothesizes that better contextual representations can be generate
 - Pretrain a language model with the proposed Segatron.
 - BERT is a good baseline model, as it requires less computational resources.
 - Input X of SegaBERT is a sequence of tokens, which can be one or more sentences or paragraphs.
-- The representation xt for token t is computed by summing the corresponding each of the embeddings as you can see in the illustration. 
+- The representation xt for token t is computed by summing each of the embeddings as you can see in the illustration. 
 
 
 <img width="330" alt="Screen Shot 2022-03-26 at 2 44 01 PM" src="https://user-images.githubusercontent.com/69778066/160254806-b54df98b-326f-42e1-809e-d0a8f2b95625.png">
