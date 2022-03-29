@@ -3,7 +3,7 @@
 ## Overview
 Transformers are powerful for sequence modeling! Nearly all state-of-the-art language models and pre-trained language models are based on the Transformer architecture. 
 However, the algorithm distinguishes sequential tokens only with the token position index. 
-This article hypothesizes that better contextual representations can be generated from the Transformer with richer positional information. To verify this, the paper proposes a segment-aware Transformer (Segatron), by replacing the original token position encoding with a combined position encoding of paragraph, sentence, and token. 
+This article hypothesizes that better contextual representations can be generated from the Transformer given better positional information. To verify this, the paper proposes a segment-aware Transformer (Segatron), by replacing the original token position encoding with a combined position encoding of paragraph, sentence, and token. 
 
 ## Approach/Model
 - This algorithm was applied first by replacing the vanilla Transformer index in Transformer XL, and then to a pre-trained language model, BERT. 
@@ -20,7 +20,7 @@ This article hypothesizes that better contextual representations can be generate
 
 - Each are the relative position embedding of token, sentence, and paragraph.
 - To equip the recurrence memory mechanism of Transformer-XL with the segment-aware relative position encoding, the paragraph position, the sentence position, and the token position indexes of the previous segment should also be cached together with the hidden states. 
-- Then, the relative position can be calculated by subtracting the cached position indexes from the current position indexes.
+- Below you can see the input representation 
 
 <img width="369" alt="Screen Shot 2022-03-26 at 2 42 55 PM" src="https://user-images.githubusercontent.com/69778066/160254773-c96e75a6-371e-4f9c-9254-4309a42a0e3d.png">
 
@@ -28,9 +28,8 @@ This article hypothesizes that better contextual representations can be generate
 ### Pre-trained Segatron(SegaBERT)
 - Pretrain a language model with the proposed Segatron.
 - BERT is a good baseline model, as it requires less computational resources.
-- SegaBERT pre-trained with Wiki-books dataset and 1M training steps
 - Input X of SegaBERT is a sequence of tokens, which can be one or more sentences or paragraphs.
-- 
+- The representation xt for token t is computed by summing the corresponding each of the embeddings as you can see in the illustration. 
 
 
 <img width="330" alt="Screen Shot 2022-03-26 at 2 44 01 PM" src="https://user-images.githubusercontent.com/69778066/160254806-b54df98b-326f-42e1-809e-d0a8f2b95625.png">
@@ -41,21 +40,21 @@ This article hypothesizes that better contextual representations can be generate
 - WikiText-103: preserves both punctuations and paragraph line breakers.
 
 #### Main Results
-- Experimental results show that BERT pre-trained with Segatron (SegaBERT) can outperform BERT with vanilla Transformer on various NLP tasks
+- Here we see that the PPL of Transformer-XL decreases from 24.35 to 24.07/22.51 after adding paragraph/sentence position encoding, and further decreases to 22.47 by encoding paragraph and sentence positions simultaneously. The results show that both the paragraph position and sentence position can help the Transformer to model language. Sentence position encoding contributes more than paragraph position encoding in our experiments.
 
 <img width="367" alt="Screen Shot 2022-03-26 at 4 59 17 PM" src="https://user-images.githubusercontent.com/69778066/160258399-13378e67-6c62-40b3-93e1-0cb3e5b12bc2.png">
-
-Here we see that the PPL of Transformer-XL decreases from 24.35 to 24.07/22.51 after adding paragraph/sentence position encoding, and further decreases to 22.47 by encod- ing paragraph and sentence positions simultaneously. The results show that both the paragraph position and sentence po- sition can help the Transformer to model language. Sentence position encoding contributes more than paragraph position encoding in our experiments.
-
 
 <img width="492" alt="Screen Shot 2022-03-26 at 5 01 44 PM" src="https://user-images.githubusercontent.com/69778066/160258462-fbc57ec1-4252-463e-b378-f22f2b078724.png">
 <img width="421" alt="Screen Shot 2022-03-26 at 5 02 43 PM" src="https://user-images.githubusercontent.com/69778066/160258474-d2455ab4-0efb-4f68-b5bc-89760cc4a64c.png">
 
+## Critial Analysis
+Doesn't discuss any drawbacks.
+
 ## Discussion Topic 1
-Why is this segment-aware method able to consistently outperform the original transformer methods?
+What could be a drawback of this application?
 
 ## Discussion Topic 2
-What could be a drawback of this application?
+Why is this segment-aware method able to consistently outperform the original transformer methods?
 
 ## Discussion Topic 3
 What situations would Segatron be prefferent and what situations what it not be preffered? 
