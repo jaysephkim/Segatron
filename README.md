@@ -33,6 +33,8 @@ This article hypothesizes that better contextual representations can be generate
 
 <img width="330" alt="Screen Shot 2022-03-26 at 2 44 01 PM" src="https://user-images.githubusercontent.com/69778066/160254806-b54df98b-326f-42e1-809e-d0a8f2b95625.png">
 
+## Discussion Topic 1
+Will this new method be able to outperform the original transformer?
 
 ## Performance
 #### Dataset
@@ -49,11 +51,9 @@ This article hypothesizes that better contextual representations can be generate
 ## Critial Analysis
 Doesn't discuss any drawbacks.
 
-## Discussion Topic 1
+## Discussion Topic 2
 What could be a drawback of this application?
 
-## Discussion Topic 2
-Why is this segment-aware method able to consistently outperform the original transformer methods?
 
 ## Discussion Topic 3
 What situations would Segatron be prefferent and what situations what it not be preffered? 
