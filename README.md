@@ -14,7 +14,7 @@ This article hypothesizes that better contextual representations can be generate
 - Transformer-XL is a memory-augmented Transformer with relative position encoding, thus allowing long range dependencies. 
 - We replace the vanilla Transformer index in Transformer-XL with Segatron. 
 - This proposed method introduces paragraph and sentence segmentation to the relative position encoding. 
-- The new embeddings Ri,j,k are defined as:
+- The new embeddings are defined as:
 
 <img width="396" alt="Screen Shot 2022-03-26 at 2 21 07 PM" src="https://user-images.githubusercontent.com/69778066/160254104-9c23d442-7466-4f46-9399-1b805229617b.png">
 
