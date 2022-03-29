@@ -19,7 +19,6 @@ This article hypothesizes that better contextual representations can be generate
 <img width="396" alt="Screen Shot 2022-03-26 at 2 21 07 PM" src="https://user-images.githubusercontent.com/69778066/160254104-9c23d442-7466-4f46-9399-1b805229617b.png">
 
 - Each are the relative position embedding of token, sentence, and paragraph.
-- To equip the recurrence memory mechanism of Transformer-XL with the segment-aware relative position encoding, the paragraph position, the sentence position, and the token position indexes of the previous segment should also be cached together with the hidden states. 
 - Below you can see the input representation 
 
 <img width="369" alt="Screen Shot 2022-03-26 at 2 42 55 PM" src="https://user-images.githubusercontent.com/69778066/160254773-c96e75a6-371e-4f9c-9254-4309a42a0e3d.png">
